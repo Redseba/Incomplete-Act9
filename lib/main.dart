@@ -4,7 +4,7 @@ import 'package:path/path.dart' as p;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DatabaseHelper.instance.database; // Ensure the database is initialized
+  await DatabaseHelper.instance.database;
   runApp(const MyApp());
 }
 
@@ -172,6 +172,7 @@ class _FolderListScreenState extends State<FolderListScreen> {
             },
             decoration: const InputDecoration(hintText: 'Folder Name'),
           ),
+
           actions: <Widget>[
             TextButton(
               child: const Text('Cancel'),
@@ -179,6 +180,7 @@ class _FolderListScreenState extends State<FolderListScreen> {
                 Navigator.of(dialogContext).pop();
               },
             ),
+
             TextButton(
               child: const Text('Add'),
               onPressed: () async {
@@ -188,6 +190,7 @@ class _FolderListScreenState extends State<FolderListScreen> {
                   Navigator.of(dialogContext).pop();
                 }
               },
+
             ),
           ],
         );
@@ -203,7 +206,7 @@ class _FolderListScreenState extends State<FolderListScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: _showAddFolderDialog, // Trigger the add folder dialog
+            onPressed: _showAddFolderDialog,
           ),
         ],
       ),
